@@ -9,7 +9,7 @@ import com.iqbalproject.mynews.model.ArticleDetail
 
 class ArtcilesAdapter(private val data: List<ArticleDetail>): RecyclerView.Adapter<ArticleHolder>() {
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ArticleHolder {
-        return ArticleHolder(LayoutInflater.from(parent.context).inflate(R.layout.article_item, parent, false))
+        return ArticleHolder(parent.context, LayoutInflater.from(parent.context).inflate(R.layout.article_item, parent, false))
     }
 
     override fun getItemCount(): Int {
