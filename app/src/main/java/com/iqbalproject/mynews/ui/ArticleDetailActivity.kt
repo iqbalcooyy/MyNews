@@ -15,6 +15,18 @@ class ArticleDetailActivity : AppCompatActivity() {
 
         detailUrl = intent.getStringExtra("detailUrl")
 
+        setupWebView()
         wvArticleDetail.loadUrl(detailUrl)
+    }
+
+    private fun setupWebView() {
+        wvArticleDetail.setInitialScale(1)
+        val webSetting = wvArticleDetail.settings
+        webSetting.setAppCacheEnabled(false)
+        webSetting.builtInZoomControls = true
+        webSetting.displayZoomControls = false
+        webSetting.javaScriptEnabled = true
+        webSetting.useWideViewPort = true
+        webSetting.domStorageEnabled = true
     }
 }
